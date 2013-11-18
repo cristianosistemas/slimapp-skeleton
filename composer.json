@@ -1,0 +1,30 @@
+{
+    "name": "rogeriolino/slimapp-skeleton",
+    "type": "project",
+    "description": "Slim App Skeleton",
+    "keywords": ["slim", "slimframework", "skeleton", "app"],
+    "homepage": "http://rogeriolino.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rogério Alencar Lino Filho", 
+            "email": "rogeriolino@gmail.com",
+            "homepage": "http://rogeriolino.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "slim/slim": "2.*",
+        "slim/views": "0.1.*",
+        "twig/twig": "1.*",
+        "monolog/monolog": "~1.6",
+        "doctrine/orm": "2.4.0",
+        "simplethings/entity-audit-bundle": "0.*",
+        "rogeriolino/commons": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Application\\": "lib/"
+        }
+    }
+}

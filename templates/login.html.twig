@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <title>SlimApp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="{{ baseUrl() }}/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="{{ baseUrl() }}/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+        <link href="{{ baseUrl() }}/css/login.css" rel="stylesheet" media="screen">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="{{ baseUrl() }}/js/html5shiv.js"></script>
+        <script src="{{ baseUrl() }}/js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <form class="form-signin" action="{{ baseUrl() }}/login" method="post">
+                <h2 class="form-signin-heading">Login</h2>
+                {% if error %}
+                <div class="alert alert-danger">
+                    {{ error }}
+                </div>
+                {% endif %}
+                <div class="input-group username">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </span>
+                    <label for="username" class="sr-only">E-Mail</label>
+                    <input id="username" type="text" class="form-control" placeholder="E-Mail" name="username">
+                </div>
+                <div class="input-group password">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock"></span>
+                    </span>
+                    <label for="password" class="sr-only">Senha</label>
+                    <input id="password" type="password" class="form-control" placeholder="Senha" name="password">
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+            </form>
+        </div>
+        <script src="{{ baseUrl() }}/js/jquery.min.js"></script>
+        <script src="{{ baseUrl() }}/js/bootstrap.min.js"></script>
+    </body>
+</html>

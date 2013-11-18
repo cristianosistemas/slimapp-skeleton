@@ -1,0 +1,37 @@
+{% extends "main.html.twig" %}
+{% block content %}
+    <form action="#" method="post" data-validate="parsley">
+        <div class="crud-content">
+            {% if success %}
+                <div class="alert alert-success">
+                    {{ success }}
+                </div>
+            {% endif %}
+            {% if error %}
+                <div class="alert alert-danger">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <input type="hidden" name="data[id]" value="{{ model.id }}">
+            {% block formContent %}
+            {% endblock %}
+        </div>
+        <div class="form-footer">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-save"></span>
+                    Salvar
+                </button>
+                <a href="{{ baseUrl() }}/{{ controllerName }}" class="btn btn-default">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    Voltar
+                </a>
+                <a href="{{ baseUrl() }}/{{ controllerName }}/edit" class="btn btn-default">
+                    <span class="glyphicon glyphicon-plus-sign"></span>
+                    Novo
+                </a>
+            </div>
+        </div>
+    </form>
+{% endblock %}

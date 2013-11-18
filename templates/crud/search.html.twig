@@ -1,0 +1,45 @@
+{% extends "main.html.twig" %}
+{% block content %}
+    <div class="crud-header">
+        <div class="col-md-10">
+            <form action="{{ baseUrl() }}/{{ controllerName }}" method="get" role="search">
+                <div class="input-group searchbox">
+                    <input type="text" class="form-control" placeholder="Buscar" name="s" id="search" value="{{ search }}">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+            <div class="buttons">
+                <a href="{{ baseUrl() }}/{{ controllerName }}/edit" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-plus-sign"></span>
+                    Novo
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="crud-content">
+        {% block searchContent %}
+        {% endblock %}
+
+        {% if pages > 1 %}
+            <div class="pagination-container">
+                <ul class="pagination">
+                    <li {% if page == 0 %}class="disabled"{% endif %}>
+                        <a href="?page=0">&laquo;</a>
+                    </li>
+                    {% for i in range(0, pages) %}
+                    <li {% if i == page %}class="active"{% endif %}>
+                        <a href="?page={{ i }}"><?php echo $i + 1 ?></a>
+                    </li>
+                    {% endfor %}
+                    <li {% if page == pages - 1 %}class="disabled"{% endif %}>
+                        <a href="?page={{ pages - 1 }}">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
