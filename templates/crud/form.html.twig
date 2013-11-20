@@ -1,10 +1,10 @@
 {% extends "main.html.twig" %}
 {% block content %}
-    <form action="#" method="post" data-validate="parsley">
+    <form action="{{ baseUrl() }}/{{ controllerName }}/edit/{{ model.id }}" method="post" data-validate="parsley" enctype="multipart/form-data">
         <div class="crud-content">
-            {% if success %}
+            {% if flash.success %}
                 <div class="alert alert-success">
-                    {{ success }}
+                    {{ flash.success }}
                 </div>
             {% endif %}
             {% if error %}
