@@ -32,7 +32,7 @@
                     </li>
                     {% for i in range(0, pages) %}
                     <li {% if i == page %}class="active"{% endif %}>
-                        <a href="?page={{ i }}"><?php echo $i + 1 ?></a>
+                        <a href="?page={{ i }}">{{ i + 1 }}</a>
                     </li>
                     {% endfor %}
                     <li {% if page == pages - 1 %}class="disabled"{% endif %}>
