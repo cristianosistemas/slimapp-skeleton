@@ -19,7 +19,6 @@
         "twig/twig": "1.*",
         "monolog/monolog": "~1.6",
         "doctrine/orm": "2.4.0",
-        "simplethings/entity-audit-bundle": "0.*",
         "rogeriolino/commons": "dev-master"
     },
     "autoload": {
